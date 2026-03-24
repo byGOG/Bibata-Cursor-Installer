@@ -10,7 +10,13 @@ One-click installer for [Bibata Modern Ice](https://github.com/ful1e5/Bibata_Cur
 - Auto-detects system language (English / Turkish)
 - Cleans up temporary files after installation
 
-## Usage
+## Quick Install (PowerShell)
+
+```powershell
+irm https://raw.githubusercontent.com/byGOG/Bibata-Cursor-Installer/master/install.ps1 | iex
+```
+
+## Manual Install
 
 1. Download `install-bibata-cursor.bat`
 2. Double-click to run
