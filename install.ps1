@@ -56,7 +56,7 @@ New-Item -ItemType Directory -Path $TEMP_DIR -Force | Out-Null
 
 # Download (curl is faster than Invoke-WebRequest)
 Write-Host $msg.dl
-& curl.exe -L -o $ZIP_FILE $DOWNLOAD_URL --silent --show-error
+& curl.exe -L -o $ZIP_FILE $DOWNLOAD_URL --progress-bar
 if ($LASTEXITCODE -ne 0) {
     Write-Host $msg.errDl
     Start-Sleep -Seconds 5
