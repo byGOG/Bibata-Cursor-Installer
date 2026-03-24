@@ -13,7 +13,7 @@ One-click installer for [Bibata Modern Ice](https://github.com/ful1e5/Bibata_Cur
 ## Install
 
 ```powershell
-curl.exe -sL https://raw.githubusercontent.com/byGOG/Bibata-Cursor-Installer/master/install.ps1 | powershell -NoProfile -
+irm https://raw.githubusercontent.com/byGOG/Bibata-Cursor-Installer/master/install.ps1 | iex
 ```
 
 ## Credits
