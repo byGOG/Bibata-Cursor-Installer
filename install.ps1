@@ -54,16 +54,15 @@ Write-Host ""
 if (Test-Path $TEMP_DIR) { Remove-Item $TEMP_DIR -Recurse -Force }
 New-Item -ItemType Directory -Path $TEMP_DIR -Force | Out-Null
 
-# Download
+# Download (curl is faster than Invoke-WebRequest)
 Write-Host $msg.dl
-try {
-    Invoke-WebRequest -Uri $DOWNLOAD_URL -OutFile $ZIP_FILE -UseBasicParsing
-    Write-Host $msg.dlDone
-} catch {
+& curl.exe -L -o $ZIP_FILE $DOWNLOAD_URL --silent --show-error
+if ($LASTEXITCODE -ne 0) {
     Write-Host $msg.errDl
     Start-Sleep -Seconds 5
     return
 }
+Write-Host $msg.dlDone
 Write-Host ""
 
 # Extract
